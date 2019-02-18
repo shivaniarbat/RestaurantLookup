@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Restaurant Lookup</string>
+    <string name="food_main">Main Image</string>
+    <array name="cuisines">
+        <item>Indian</item>
+        <item>Thai</item>
+        <item>Italian</item>
+        <item>Chinese</item>
+        <item>Mexican</item>
+    </array>
+    <string name="welcome_note">Welcome to Restaurant Lookup App for Athens, GA area.</string>
+    <string name="welcome_overview">Select from below cuisine types to search for your favorite restaurants.</string>
+</resources>

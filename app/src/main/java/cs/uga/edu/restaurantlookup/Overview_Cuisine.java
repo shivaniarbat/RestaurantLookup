@@ -2,17 +2,12 @@ package cs.uga.edu.restaurantlookup;
 
 import android.support.annotation.RawRes;
 import android.support.annotation.StringRes;
-import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
-import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toolbar;
-
-import org.w3c.dom.Text;
 
 import java.io.InputStream;
 

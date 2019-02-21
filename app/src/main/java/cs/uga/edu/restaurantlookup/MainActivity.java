@@ -3,6 +3,7 @@ package cs.uga.edu.restaurantlookup;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -45,7 +46,7 @@ public class MainActivity extends AppCompatActivity  {
             InputStream mainOverviewFile = this.getResources().openRawResource(R.raw.main_page_overview);
             byte[] main_page_overview = new byte[mainOverviewFile.available()];
             mainOverviewFile.read(main_page_overview);
-            textViewAppOverview.setText(new String(main_page_overview));
+            textViewAppOverview.setText(Html.fromHtml(new String(main_page_overview)));
         } catch (Exception e) {
             Log.i(DEBUG_TAG,"exception:while R/W the raw file");
         }

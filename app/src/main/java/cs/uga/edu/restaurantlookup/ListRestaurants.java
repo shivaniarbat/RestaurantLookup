@@ -4,15 +4,11 @@ import android.support.annotation.RawRes;
 import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
-import android.widget.ImageView;
-import android.widget.RatingBar;
 import android.widget.TextView;
-
 import java.io.InputStream;
-import java.util.HashMap;
-import java.util.Map;
 
 public class ListRestaurants extends AppCompatActivity {
 
@@ -30,10 +26,8 @@ public class ListRestaurants extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_restaurants);
 
-        /* to set up the back button and title*/
+        /* to set up the back button */
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        @StringRes int titleListRestaurants = R.string.list_restaurants;
-        getSupportActionBar().setTitle(titleListRestaurants);
 
         /* instanstiate and add scroll bar for the text view */
         restaurantList = findViewById(R.id.restaurantList);
@@ -59,7 +53,7 @@ public class ListRestaurants extends AppCompatActivity {
             InputStream mainOverviewFile = this.getResources().openRawResource(restListOverviewRawFile);
             byte[] cuisineOverview = new byte[mainOverviewFile.available()];
             mainOverviewFile.read(cuisineOverview);
-            view.setText(new String(cuisineOverview));
+            view.setText(Html.fromHtml(new String(cuisineOverview)));
         } catch (Exception e) {
             Log.i(DEBUG_TAG,"exception:while R/W the raw file");
         }
@@ -74,27 +68,43 @@ public class ListRestaurants extends AppCompatActivity {
     protected void callListRestaurants(String message,TextView textView) {
         switch (message) {
             case "Native American":
+                @StringRes int nativeamerican = R.string.native_american_res_title;
+                getSupportActionBar().setTitle(nativeamerican);
                 setOverviewTextViews(textView,R.raw.native_american_restlist);
                 break;
             case "Indian":
+                @StringRes int indian = R.string.indian_res_title;
+                getSupportActionBar().setTitle(indian);
                 setOverviewTextViews(textView,R.raw.indian_restlist);
                 break;
             case "Thai":
+                @StringRes int thai = R.string.thai_res_title;
+                getSupportActionBar().setTitle(thai);
                 setOverviewTextViews(textView,R.raw.thai_restlist);
                 break;
             case "Italian":
+                @StringRes int italian = R.string.italian_res_title;
+                getSupportActionBar().setTitle(italian);
                 setOverviewTextViews(textView,R.raw.italian_restist);
                 break;
             case "Chinese":
+                @StringRes int chinese = R.string.chinese_res_title;
+                getSupportActionBar().setTitle(chinese);
                 setOverviewTextViews(textView,R.raw.chinese_restlist);
                 break;
             case "Mexican":
+                @StringRes int mexican = R.string.mexican_res_title;
+                getSupportActionBar().setTitle(mexican);
                 setOverviewTextViews(textView,R.raw.mexican_restlist);
                 break;
             case "Japanese":
+                @StringRes int japanese = R.string.japanese_res_title;
+                getSupportActionBar().setTitle(japanese);
                 setOverviewTextViews(textView,R.raw.japanese_restlist);
                 break;
             case "Armenian":
+                @StringRes int armenian = R.string.armenian_res_title;
+                getSupportActionBar().setTitle(armenian);
                 setOverviewTextViews(textView,R.raw.armenian_restlist);
                 break;
         }

@@ -44,9 +44,10 @@ public class ListRestaurants extends AppCompatActivity {
     }
 
     /**
-     *
-     * @param view
-     * @param restListOverviewRawFile
+     * Methos setOverviewTextViews reads the raw file and displays in the desired text view
+     * @param view  textview in which raw file content needs to be displayed
+     * @param restListOverviewRawFile   raw file for content
+     * @exception Exception exception to handle any excption occuring while reading/writing raw file
      */
     protected void setOverviewTextViews(TextView view, @RawRes int restListOverviewRawFile) {
         try {
@@ -61,9 +62,11 @@ public class ListRestaurants extends AppCompatActivity {
     }
 
     /**
-     *
-     * @param message
-     * @param textView
+     * Method callListRestaurants populates the value in the textViews depending upon the option selected
+     * in spinner in the main activity window. Also the title of the action bar is also updated upon the
+     * selected spinner option.
+     * @param message   string which is the deciding parameter on what values will be populated in views
+     * @param textView  textView to display list of restaurants
      */
     protected void callListRestaurants(String message,TextView textView) {
         switch (message) {

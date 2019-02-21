@@ -13,6 +13,13 @@ import android.widget.TextView;
 
 import java.io.InputStream;
 
+/**
+ * Restaurant Lookup App - Android Application lists the restaurants in Athnens, GA
+ *                      based on the cuisine types
+ * @author Shivani Arbat
+ * @version 1.0
+ * @since 02/21/2019
+ */
 public class MainActivity extends AppCompatActivity  {
 
     private static final String DEBUG_TAG = "Restaurant_Lookup_Main";
@@ -80,9 +87,9 @@ public class MainActivity extends AppCompatActivity  {
     }
 
     /**
-     *
-     * @param spinner
-     * @return
+     * Returns string value of the selected from the spinner on the main activity screen
+     * @param spinner   input spinner to select input from
+     * @return  String  output string from spinner selected option
      */
     protected String getSpinnerSelectedValue(Spinner spinner) {
         String selectedOption = spinner.getSelectedItem().toString();

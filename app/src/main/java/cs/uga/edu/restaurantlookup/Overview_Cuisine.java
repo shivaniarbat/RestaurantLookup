@@ -47,16 +47,16 @@ public class Overview_Cuisine extends AppCompatActivity {
 
         /* add the image view to display */
         final ImageView imageView = findViewById(R.id.cuisineImage);
-//        imageView.setImageResource(R.drawable.ind_image7);
 
         /* call method to populate text view values based on spinner item selected*/
         callCuisineIntent(message,cuisineOverviewTextView,overviewTitleTextView,imageView);
     }
 
     /**
-     *
-     * @param view
-     * @param cuisineOverviewRawFile
+     * Methos setOverviewTextViews reads the raw file and displays in the desired text view
+     * @param view  textview in which raw file content will be displayed
+     * @param cuisineOverviewRawFile   raw file for content
+     * @exception Exception exception to handle any excption occuring while reading/writing raw file
      */
     protected void setOverviewTextViews(TextView view, @RawRes int cuisineOverviewRawFile) {
         try {
@@ -71,9 +71,9 @@ public class Overview_Cuisine extends AppCompatActivity {
     }
 
     /**
-     *
-     * @param view
-     * @param cuisineOverviewTitle
+     * Methos setOverviewTitleTextView sets the title in the text view
+     * @param view textview in which raw file content needs to be displayed
+     * @param cuisineOverviewTitle textview in which string content will be displayed
      */
     protected void setOverviewTitleTextView(TextView view, @StringRes int cuisineOverviewTitle) {
         try {
@@ -85,10 +85,11 @@ public class Overview_Cuisine extends AppCompatActivity {
     }
 
     /**
-     *
-     * @param message
-     * @param cuisineOverviewTextView
-     * @param overviewTitleTextView
+     * Method callCuisineIntent populates the value in the textViews and ImageView depending upon
+     * the option selected in spinner in the main activity window.
+     * @param message   string which is the deciding parameter on what values will be populated in views
+     * @param cuisineOverviewTextView   textView to display cuisine overview
+     * @param overviewTitleTextView     textView to display cuisine title
      */
     protected void callCuisineIntent(String message,TextView cuisineOverviewTextView,TextView overviewTitleTextView,ImageView imageView){
 

@@ -1,18 +1,16 @@
 package cs.uga.edu.restaurantlookup;
 
-import android.content.res.Resources;
-import android.support.annotation.ArrayRes;
 import android.support.annotation.RawRes;
 import android.support.annotation.StringRes;
-import android.support.v7.app.ActionBar;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
-import android.view.View;
-import android.widget.ImageButton;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import org.w3c.dom.Text;
 
@@ -21,12 +19,22 @@ import java.io.InputStream;
 public class Overview_Cuisine extends AppCompatActivity {
 
     private static final String DEBUG_TAG = "Restaurant_Lookup_cui";
-    private int arrayImageIndex;
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_overview__cuisine);
+
+        /* to set up the back button and title*/
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        @StringRes int titleListRestaurants = R.string.cuisine_overview;
+        getSupportActionBar().setTitle(titleListRestaurants);
 
         /* get Intent */
         String message = "";
@@ -48,8 +56,6 @@ public class Overview_Cuisine extends AppCompatActivity {
 
         /* call method to populate text view values based on spinner item selected*/
         callCuisineIntent(message,cuisineOverviewTextView,overviewTitleTextView,imageView);
-
-
     }
 
     /**

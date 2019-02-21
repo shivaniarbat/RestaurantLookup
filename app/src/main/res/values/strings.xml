@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Restaurant Lookup</string>
     <string name="food_main">Main Image</string>
+    <string name="cuisine_overview">Cuisine Overview</string>
+    <string name="list_restaurants">List of Restaurants</string>
     <array name="cuisines">
         <item>Native American</item>
         <item>Indian</item>

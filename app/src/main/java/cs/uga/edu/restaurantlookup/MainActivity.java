@@ -1,7 +1,6 @@
 package cs.uga.edu.restaurantlookup;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,7 +12,7 @@ import android.widget.TextView;
 
 import java.io.InputStream;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
     private static final String DEBUG_TAG = "Restaurant_Lookup_Main";
     protected String spinnerOptionSelected;
@@ -79,6 +78,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    /**
+     *
+     * @param spinner
+     * @return
+     */
     protected String getSpinnerSelectedValue(Spinner spinner) {
         String selectedOption = spinner.getSelectedItem().toString();
         return selectedOption;
